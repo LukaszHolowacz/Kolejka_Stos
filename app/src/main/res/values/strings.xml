@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Kolejka_Stos</string>
+    <string name="dzialanie_stosu">DZIAŁANIE STOSU</string>
+    <string name="zawartosc">Zawartosc</string>
+    <string name="wpisz_cokolwiek">Wpisz cokolwiek</string>
+    <string name="dzia_anie_kolejki">DZIAŁANIE KOLEJKI</string>
+    <string name="pierwszy_element">Pierwszy element</string>
+    <string name="ca_a_zawarto">Cała zawartość</string>
+    <string name="usu">Usuń</string>
+    <string name="add">Dodaj</string>
 </resources>
