@@ -51,9 +51,10 @@ class kolejka : AppCompatActivity() {
         add.setOnClickListener {
             if(podanytext.text.toString() != "") {
                 kolejka.add(podanytext.text.toString().toInt())
+                Toast.makeText(applicationContext, "Dodano podaną liczbę do kolejki!", Toast.LENGTH_LONG).show()
             }
             else{
-                Toast.makeText(applicationContext, "Musisz podać jakiś tekst!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Musisz podać jakąś liczbę!", Toast.LENGTH_LONG).show()
             }
         }
         remove.setOnClickListener {
