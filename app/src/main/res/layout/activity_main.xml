@@ -27,7 +27,7 @@
         android:layout_height="335dp"
         android:text="KOLEJKA"
         android:textColor="@color/black"
-        android:textSize="78sp"
+        android:textSize="75sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

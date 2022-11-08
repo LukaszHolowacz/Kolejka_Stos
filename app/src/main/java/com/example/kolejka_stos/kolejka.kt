@@ -18,6 +18,7 @@ class kolejka : AppCompatActivity() {
         val podanytext = findViewById<EditText>(R.id.inputKolejka)
         val wynik = findViewById<TextView>(R.id.wynikKolejka)
 
+
         val wszystko = findViewById<Button>(R.id.allKolejka)
         wszystko.setOnClickListener {
             if(!kolejka.isEmpty()){

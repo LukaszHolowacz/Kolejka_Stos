@@ -33,8 +33,13 @@ class stos : AppCompatActivity() {
 
         val removeStos = findViewById<Button>(R.id.removeStos)
         removeStos.setOnClickListener {
-            stos.removeLast()
-            wynik.text = stos.toString()
+            if(stos.isEmpty()){
+                wynik.text = stos.toString()
+            }
+            else{
+                stos.removeLast()
+                wynik.text = stos.toString()
+            }
         }
 
         val firstStos = findViewById<Button>(R.id.firstStos)
