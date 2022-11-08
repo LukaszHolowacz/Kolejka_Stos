@@ -29,7 +29,7 @@ class kolejka : AppCompatActivity() {
                 wynik.text = kolejka.toString()
             }
             else{
-                Toast.makeText(applicationContext, "Kolejka jest pusta!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Kolejka jest pusta!", Toast.LENGTH_SHORT).show()
             }
         }
         first.setOnClickListener {
@@ -37,7 +37,7 @@ class kolejka : AppCompatActivity() {
                 wynik.text = kolejka.peek().toString()
             }
             else{
-                Toast.makeText(applicationContext, "Kolejka jest pusta!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Kolejka jest pusta!", Toast.LENGTH_SHORT).show()
             }
         }
         last.setOnClickListener {
@@ -45,20 +45,21 @@ class kolejka : AppCompatActivity() {
                 wynik.text = kolejka.last().toString()
             }
             else{
-                Toast.makeText(applicationContext, "Kolejka jest pusta!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Kolejka jest pusta!", Toast.LENGTH_SHORT).show()
             }
         }
         add.setOnClickListener {
             if(podanytext.text.toString() != "") {
                 kolejka.add(podanytext.text.toString().toInt())
-                Toast.makeText(applicationContext, "Dodano podaną liczbę do kolejki!", Toast.LENGTH_LONG).show()
+                wynik.text = kolejka.toString()
             }
             else{
-                Toast.makeText(applicationContext, "Musisz podać jakąś liczbę!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Musisz podać jakąś liczbę!", Toast.LENGTH_SHORT).show()
             }
         }
         remove.setOnClickListener {
             kolejka.poll()
+            wynik.text = kolejka.toString()
         }
         back.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

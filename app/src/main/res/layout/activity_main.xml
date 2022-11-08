@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/stosbtn"
-        android:layout_width="415dp"
-        android:layout_height="370dp"
+        android:layout_width="414dp"
+        android:layout_height="348dp"
         android:text="STOS"
         android:textColor="@color/black"
         android:textSize="78sp"
@@ -24,12 +24,14 @@
     <Button
         android:id="@+id/kolejkabtn"
         android:layout_width="411dp"
-        android:layout_height="367dp"
+        android:layout_height="335dp"
         android:text="KOLEJKA"
         android:textColor="@color/black"
         android:textSize="78sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,7 @@
         android:background="@drawable/border"
         android:ems="10"
         android:hint="@string/wpisz_cokolwiek"
+        android:textColor="@color/white"
         android:inputType="number"
         android:textAlignment="center"
         android:textColorHint="#8FFFFFF0"

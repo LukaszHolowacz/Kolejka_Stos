@@ -21,7 +21,7 @@ class stos : AppCompatActivity() {
         val wynik = findViewById<TextView>(R.id.wynikStos)
         val stos = LinkedList<Int>()
         val podanaliczba = findViewById<EditText>(R.id.inputStos)
-        val back = findViewById<Button>(R.id.backbtn)
+        val back = findViewById<Button>(R.id.backbtn2)
         val zawartosc = findViewById<Button>(R.id.allStos)
 
         addStos.setOnClickListener {
@@ -29,12 +29,10 @@ class stos : AppCompatActivity() {
                 if (stos.isEmpty()){
                     stos.addFirst(podanaliczba.text.toString().toInt())
                     wynik.text = stos.toString()
-                    Toast.makeText(applicationContext, "Dodałem element do stosu!", Toast.LENGTH_SHORT).show()
                 }
                 else {
                     stos.add(podanaliczba.text.toString().toInt())
                     wynik.text = stos.toString()
-                    Toast.makeText(applicationContext, "Dodałem element do stosu!", Toast.LENGTH_SHORT).show()
                 }
             }
             else{
@@ -47,7 +45,7 @@ class stos : AppCompatActivity() {
         }
         firstStos.setOnClickListener {
             if (stos.isEmpty()){
-                Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_SHORT).show()
             }
             else{
                 wynik.text = stos.first.toString()
@@ -55,7 +53,7 @@ class stos : AppCompatActivity() {
         }
         lastStos.setOnClickListener {
             if (stos.isEmpty()){
-                Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_SHORT).show()
             }
             else{
                 wynik.text = stos.last.toString()
@@ -63,7 +61,7 @@ class stos : AppCompatActivity() {
         }
         zawartosc.setOnClickListener {
             if (stos.isEmpty()){
-                Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_SHORT).show()
             }
             else{
                 wynik.text = stos.toString()
