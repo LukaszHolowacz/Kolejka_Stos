@@ -24,6 +24,7 @@ class stos : AppCompatActivity() {
             if(podanaliczba.text.toString() != ""){
                 stos.add(podanaliczba.text.toString().toInt())
                 wynik.text = stos.toString()
+                podanaliczba.text.clear()
             }
             else{
                 Toast.makeText(applicationContext, "Musisz podać jakąś liczbę", Toast.LENGTH_SHORT).show()
@@ -42,7 +43,7 @@ class stos : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_SHORT).show()
             }
             else{
-                wynik.text = stos.get(0).toString()
+                wynik.text = stos.firstElement().toString()
             }
         }
 

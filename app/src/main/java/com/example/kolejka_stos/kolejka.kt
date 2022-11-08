@@ -53,6 +53,7 @@ class kolejka : AppCompatActivity() {
             if(podanytext.text.toString() != "") {
                 kolejka.add(podanytext.text.toString().toInt())
                 wynik.text = kolejka.toString()
+                podanytext.text.clear()
             }
             else{
                 Toast.makeText(applicationContext, "Musisz podać jakąś liczbę!", Toast.LENGTH_SHORT).show()
