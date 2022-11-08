@@ -14,51 +14,49 @@ class stos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stos)
 
-        val addStos = findViewById<Button>(R.id.addStos)
-        val removeStos = findViewById<Button>(R.id.removeStos)
-        val firstStos = findViewById<Button>(R.id.firstStos)
-        val lastStos = findViewById<Button>(R.id.lastStos)
+        val stos = Stack<Int>()
         val wynik = findViewById<TextView>(R.id.wynikStos)
-        val stos = LinkedList<Int>()
         val podanaliczba = findViewById<EditText>(R.id.inputStos)
-        val back = findViewById<Button>(R.id.backbtn2)
-        val zawartosc = findViewById<Button>(R.id.allStos)
 
+
+        val addStos = findViewById<Button>(R.id.addStos)
         addStos.setOnClickListener {
             if(podanaliczba.text.toString() != ""){
-                if (stos.isEmpty()){
-                    stos.addFirst(podanaliczba.text.toString().toInt())
-                    wynik.text = stos.toString()
-                }
-                else {
-                    stos.add(podanaliczba.text.toString().toInt())
-                    wynik.text = stos.toString()
-                }
+                stos.add(podanaliczba.text.toString().toInt())
+                wynik.text = stos.toString()
             }
             else{
                 Toast.makeText(applicationContext, "Musisz podać jakąś liczbę", Toast.LENGTH_SHORT).show()
             }
         }
+
+        val removeStos = findViewById<Button>(R.id.removeStos)
         removeStos.setOnClickListener {
             stos.removeLast()
             wynik.text = stos.toString()
         }
+
+        val firstStos = findViewById<Button>(R.id.firstStos)
         firstStos.setOnClickListener {
             if (stos.isEmpty()){
                 Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_SHORT).show()
             }
             else{
-                wynik.text = stos.first.toString()
+                wynik.text = stos.get(0).toString()
             }
         }
+
+        val lastStos = findViewById<Button>(R.id.lastStos)
         lastStos.setOnClickListener {
             if (stos.isEmpty()){
                 Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_SHORT).show()
             }
             else{
-                wynik.text = stos.last.toString()
+                wynik.text = stos.lastElement().toString()
             }
         }
+
+        val zawartosc = findViewById<Button>(R.id.allStos)
         zawartosc.setOnClickListener {
             if (stos.isEmpty()){
                 Toast.makeText(applicationContext, "Stos jest pusty!", Toast.LENGTH_SHORT).show()
@@ -67,6 +65,8 @@ class stos : AppCompatActivity() {
                 wynik.text = stos.toString()
             }
         }
+
+        val back = findViewById<Button>(R.id.backbtn2)
         back.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

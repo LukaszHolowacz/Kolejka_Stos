@@ -15,15 +15,10 @@ class kolejka : AppCompatActivity() {
         setContentView(R.layout.activity_kolejka)
 
         val kolejka: Queue<Int> = LinkedList<Int>()
-        val add = findViewById<Button>(R.id.addKolejka)
-        val remove = findViewById<Button>(R.id.removeKolejka)
-        val wszystko = findViewById<Button>(R.id.allKolejka)
-        val first = findViewById<Button>(R.id.firstKolejka)
-        val last = findViewById<Button>(R.id.lastKolejka)
         val podanytext = findViewById<EditText>(R.id.inputKolejka)
         val wynik = findViewById<TextView>(R.id.wynikKolejka)
-        val back = findViewById<Button>(R.id.backbtn)
 
+        val wszystko = findViewById<Button>(R.id.allKolejka)
         wszystko.setOnClickListener {
             if(!kolejka.isEmpty()){
                 wynik.text = kolejka.toString()
@@ -32,6 +27,8 @@ class kolejka : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Kolejka jest pusta!", Toast.LENGTH_SHORT).show()
             }
         }
+
+        val first = findViewById<Button>(R.id.firstKolejka)
         first.setOnClickListener {
             if(!kolejka.isEmpty()){
                 wynik.text = kolejka.peek().toString()
@@ -40,6 +37,8 @@ class kolejka : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Kolejka jest pusta!", Toast.LENGTH_SHORT).show()
             }
         }
+
+        val last = findViewById<Button>(R.id.lastKolejka)
         last.setOnClickListener {
             if(!kolejka.isEmpty()){
                 wynik.text = kolejka.last().toString()
@@ -48,6 +47,8 @@ class kolejka : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Kolejka jest pusta!", Toast.LENGTH_SHORT).show()
             }
         }
+
+        val add = findViewById<Button>(R.id.addKolejka)
         add.setOnClickListener {
             if(podanytext.text.toString() != "") {
                 kolejka.add(podanytext.text.toString().toInt())
@@ -57,10 +58,14 @@ class kolejka : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Musisz podać jakąś liczbę!", Toast.LENGTH_SHORT).show()
             }
         }
+
+        val remove = findViewById<Button>(R.id.removeKolejka)
         remove.setOnClickListener {
             kolejka.poll()
             wynik.text = kolejka.toString()
         }
+
+        val back = findViewById<Button>(R.id.backbtn)
         back.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
